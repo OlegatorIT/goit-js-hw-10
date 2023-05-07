@@ -13,8 +13,75 @@ body {
 }
 
 #search-box {
+  /* color: green; */
+  font-size: 16px;
+  /* font-weight: 600; */
   font: inherit;
   padding: 8px;
   max-width: 320px;
-  margin-bottom: 16px;
+  border-radius: 5px 20px 20px 5px;
+  border: 1px solid black;
+}
+
+
+.country-list {
+  margin-top: 10px;
+  margin-bottom: 0;
+  background-color: antiquewhite;
+  border-radius: 0 20px 20px 0;
+  display: inline-block;
+  padding-left: 0;
+}
+
+.country-item {
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.country-text {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: normal;
+}
+
+
+.info-list {
+  padding: 10px 20px 5px 10px;
+  margin-top: -10px;
+  background-color: antiquewhite;
+  border-radius: 0 20px 20px 0;
+  display: inline-block;
+
+
+}
+
+.info-item {
+  list-style: none;
+  margin: 0;
+}
+
+.info-item:first-child {
+
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.info-name {
+  font-size: 28px;
+  margin: 0;
+  font-weight: 600;
+}
+
+
+
+.info-accent {
+
+  font-weight: 600;
+  padding-right: 5px;
 }
