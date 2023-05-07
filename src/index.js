@@ -40,12 +40,30 @@ function onValueInput(e) {
               el.name.common === e.target.textContent ||
               el.flags.svg === e.target.src
             ) {
-              const index = i;
-              renderInfo(index);
+              renderCountryInfo(i);
             }
           });
+          btnBack();
         }
         // ============================================================
+        renderCountryList();
+      }
+      if (contry.length === 1) {
+        renderCountryInfo(0);
+      } else {
+        countryInfo.innerHTML = '';
+      }
+
+      function btnBack() {
+        const infoBTN = document.querySelector('.info-button');
+        infoBTN.addEventListener('click', onClickBtn);
+        function onClickBtn() {
+          renderCountryList();
+          countryInfo.innerHTML = '';
+        }
+      }
+
+      function renderCountryList() {
         const countryNameArr = [];
 
         contry.forEach((el, i) => {
@@ -55,20 +73,15 @@ function onValueInput(e) {
           } = contry[i];
           countryNameArr.push(
             ` <li class="country-item">
-           <img src="${svg}" alt="flag:${common}" height="20" width="35">
+           <img  class="country-img" src="${svg}" alt="flag:${common}" height="20" width="35">
            <p class="country-text">${common}</p>
            </li>`
           );
         });
         countryList.innerHTML = countryNameArr.join('');
       }
-      if (contry.length === 1) {
-        renderInfo(0);
-      } else {
-        countryInfo.innerHTML = '';
-      }
 
-      function renderInfo(i) {
+      function renderCountryInfo(i) {
         countryList.innerHTML = '';
 
         const {
@@ -82,6 +95,7 @@ function onValueInput(e) {
         countryInfo.innerHTML = `
              <ul class="info-list">
         <li class="info-item">
+        
           <img width="40" height="20" src="${svg}" alt="flag:${common}">
           <p class="info-name">${common}</p>
         </li>
@@ -96,7 +110,11 @@ function onValueInput(e) {
             languages
           )}</p>
         </li>
+            <li class="info-item">
+              <button class="info-button" type="button">Back</button>
+                 </li>
       </ul>`;
+        btnBack();
       }
     })
     .catch(error => {

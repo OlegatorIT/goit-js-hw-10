@@ -39,12 +39,17 @@ body {
   align-items: center;
 }
 
+.country-img {
+  cursor: pointer;
+}
+
 .country-text {
   margin: 0;
   font-size: 18px;
   font-weight: 600;
   line-height: 1.5;
   letter-spacing: normal;
+  cursor: pointer;
 }
 
 
@@ -82,4 +87,11 @@ body {
 
   font-weight: 600;
   padding-right: 5px;
+}
+
+.info-button {
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: inherit;
 }
